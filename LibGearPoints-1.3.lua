@@ -915,7 +915,7 @@ function lib:CalculateGPFromScale(s1, s2, s3, ilvl, rarity)
   local gp2 = (s2 and math.floor(0.5 + gpBase * s2)) or nil
   local gp3 = (s3 and math.floor(0.5 + gpBase * s3)) or nil
 
-  return gp1, gp2, gp3
+  return ilvl, ilvl, ilvl
 end
 
 function lib:CalculateGPFromEquipLoc(equipLoc, subClass, ilvl, rarity)

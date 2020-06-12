@@ -178,7 +178,7 @@ mod.optionsArgs = {
     inline = true,
     name = "",
     args = {
-      equationHelp = HelpPlate("GP = base_gp * 2 ^ [(level - standard_ilvl) / ilvl_denominator] * slot_scale"),
+      equationHelp = HelpPlate("GP = ilvl"),
       baseGP = {
         order = 2,
         type = "range",

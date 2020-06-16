@@ -909,13 +909,13 @@ function lib:CalculateGPFromScale(s1, s2, s3, ilvl, rarity)
   local ilvlDenominator = vars.ilvlDenominator
   local multiplier = baseGP * 2 ^ (-standardIlvl / ilvlDenominator)
   if rarity == 5 then multiplier = multiplier * vars.legendaryScale end
-  local gpBase = multiplier * 2 ^ (ilvl / ilvlDenominator)
+  local gpBase = ilvl
 
-  local gp1 = (s1 and math.floor(0.5 + gpBase * s1)) or nil
-  local gp2 = (s2 and math.floor(0.5 + gpBase * s2)) or nil
-  local gp3 = (s3 and math.floor(0.5 + gpBase * s3)) or nil
+  local gp1 = gpBase
+  local gp2 = math.floor(0.2 * gpBase)
+  local gp3 = nil
 
-  return ilvl, ilvl, ilvl
+  return gp1, gp2, gp3
 end
 
 function lib:CalculateGPFromEquipLoc(equipLoc, subClass, ilvl, rarity)
